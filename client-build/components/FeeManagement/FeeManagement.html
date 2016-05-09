@@ -1,6 +1,0 @@
-<style>
-.myGrid {
-    width: 500px;
-    height: 250px;
-  }
-</style><div class=modal-header><h3 class=modal-title>Fee Management</h3></div><div class=modal-body><div class=table-responsive style=width:860px;><table class=table><col width=20><col width=200><col width=40><col width=100><col width=200><thead><tr><th>#</th><th>Account Name</th><th>Paid</th><th>Fees</th><th>Email</th></tr></thead></table></div><input class="form-control input-sm" placeholder="Search Accounts" ng-model=searchKey type=search autofocus><div class=table-responsive style="width:860px; height:300px; overflow: scroll;"><table class="table table-striped table-hover"><tbody><tr class=info ng-repeat="account in accounts | filter: searchKey"><td>{{$index+1}}</td><td><span tooltip={{account.tooltip}}>{{account.accountname}}</span></td><td><input type=checkbox ng-change=Toggle({{account}}) ng-model=account.paid></td><td>${{account.fees}}</td><td><a href="mailto:{{account.emailaddress}}?cc=tsawwassentennisclub@gmail.com&subject=TTC Fees">{{account.emailaddress}}</a></td></tr></tbody></table></div></div><div class=modal-footer><button class="btn btn-warning" type=button ng-click=Close()>Close</button></div>
