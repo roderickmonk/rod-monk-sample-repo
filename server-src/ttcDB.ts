@@ -10,7 +10,6 @@ var moment = require('moment');
 var _ = require('lodash');
 var assert = require('assert');
 
-//mongoose.connect('mongodb://web:tsawwassentennisclub@ds061258.mongolab.com:61258/ttc');
 var db = mongoose.connect('mongodb://127.0.0.1:27017/test');
 
 // Setup the Mongoose models

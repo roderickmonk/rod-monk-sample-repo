@@ -12,7 +12,6 @@ The goals of the site are the following:
 <li>Provide an application form for new members.</li>
 <li>A means for existing members to renew their membership.</li>
 <li>A means to distinguish executive members (who will be given an extra range of privileges).</li>
-<li>A means for an executive member to send an eBlast.</li>
 <li>A means for the membership to review recent eBlasts.</li>
 <li>A new <b>TennisBC Export</b> function: this will allow a member of the executive to export the membership list to TennisBC (required once per year).</li>
 <li>A new <b>Fee Accounting</b> function: When applying, will allow a member to specify other members within the same family; this feature will allow the site to auto-determine each family's yearly fees.</li>
@@ -31,7 +30,6 @@ NodeJS, Express, AngularJS, Bootstrap, MongoDB, Mongoose, Git, GitHub, Gulp, and
 </ol>
 <h4>Application ToDo List</h4>
 <ul>
-<li>The Home Page is a work-in-progress.</li>
 <li>Export to TennisBC</li>
 <li>eBlast attachments are not yet accessible.</li>
 </ul>
@@ -39,7 +37,9 @@ NodeJS, Express, AngularJS, Bootstrap, MongoDB, Mongoose, Git, GitHub, Gulp, and
 (currently in progress)
 <ul>
 <li>Currently on the server side, TypeScript is being used to transpile from *.ts files to *.js files.  Nevertheless, the move to TypeScript is only superficial and is a work in progress.</li>
-<li>The client is using the Angular 1 framework, but it is expected that the project will be moved to Angular 2 over time.
+<li>The client is using the Angular 1 framework, but it is expected that the project will be moved to Angular 2 over time.</li>
+<li>The API is not fully REST-ful.  It will be modified to make it so.  Some consideration is being made to re-implement using 'loopback'</li>
+<li>Permissions management is awkwardly implemented.  This to be improved to use Access Control Lists.</li>
 </ul>
 
 <h4>Database</h4>
