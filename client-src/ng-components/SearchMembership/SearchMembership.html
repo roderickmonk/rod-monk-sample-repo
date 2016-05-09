@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="container-fluid">
+		<input class="form-control input-sm" placeholder="Search Membership" ng-model="searchKey" type="search" autofocus/>
+		<br>
+		<div class="panel">
+			<div class="row" ng-controller="SearchMembershipCtrl">
+				<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3" ng-repeat="x in members | orderBy:'familyname' | filter: searchKey">
+					<strong>{{x.firstname + ' ' + x.familyname}}</strong>
+					<p>
+						&nbsp;<a href="mailto:{{x.emailaddress}}">{{x.emailaddress}}</a><br>
+						&nbsp;{{x.primaryphone}}<br>
+						&nbsp;{{x.alternativephone}}
+					</p>
+					<div class="clearfix visible-lg-block"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,10 @@
+<div class="form-group" ng-class="{ 'has-error': memberForm.place.$touched && memberForm.place.$invalid }">
+	<label>Place</label>
+	<input type="text" class="form-control input-sm" name="place" ng-model="member.place"
+		   typeahead="place for place in places | filter:$viewValue" required 
+		   typeahead-editable="true" typeahead-min-length="0">
+	<div class="help-block" ng-messages="memberForm.place.$error" ng-if="memberForm.place.$touched">
+		<p ng-message>This field is required</p>
+		<div ng-messages-include="/client-build/ng-templates/form-error-messages.html"></div>
+	</div>
+</div>

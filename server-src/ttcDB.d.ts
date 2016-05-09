@@ -1,0 +1,37 @@
+/// <reference path="node.d.ts" />
+declare var mongoose: any;
+declare var bcrypt: any;
+declare var jwt: any;
+declare var Track: any;
+declare var moment: any;
+declare var _: any;
+declare var assert: any;
+declare var db: any;
+declare var MemberSchema: any;
+declare var Member: any;
+declare var NewsItemSchema: any;
+declare var NewsItem: any;
+declare var DeviceTrackingSchema: any;
+declare var DeviceTracking: any;
+declare var MONGOOSE_UPDATE_OPTIONS: {
+    multi: boolean;
+    upsert: boolean;
+    new: boolean;
+};
+declare function recordDevice(memberid: any, device: any): Promise<{}>;
+declare function saveNewsItem(newsitem: any): Promise<{}>;
+declare function getNewsItems(): Promise<{}>;
+declare function removeNewsItem(newsitemid: any): Promise<{}>;
+declare function countMembers(): Promise<{}>;
+declare function countMembersByDecade(): Promise<{}>;
+declare function countMembersByBirthMonth(): Promise<{}>;
+declare function getMembers(): Promise<{}>;
+declare function getAllEmailAddresses(): Promise<{}>;
+declare function findMember(_id: any): Promise<{}>;
+declare function persistMemberChange(member: any): Promise<{}>;
+declare function loginMember(member: any): Promise<{}>;
+declare function signupMember(member: any): Promise<{}>;
+declare function authorizeMember(_id: any): Promise<{}>;
+declare function duplicateCheck(member: any): Promise<{}>;
+declare function saveNewApplicant(member: any): Promise<{}>;
+declare function cleanDatabase(): void;

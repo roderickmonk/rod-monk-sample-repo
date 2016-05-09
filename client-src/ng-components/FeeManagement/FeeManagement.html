@@ -1,0 +1,61 @@
+<div class="modal-header">
+	<h3 class="modal-title" style="display: inline-block; margin-right: 10px; width: 350px;">Fee Management</h3>
+	<span style="display: inline-block; width: 200px;">
+		<input type="checkbox" ng-model="unpaidonly"><small>&nbsp;Unpaid Only</small>
+	</span>
+</div>
+<div class="modal-body">
+	<div class="table-responsive">
+		<table class="table">
+			<colgroup>
+				<col width="200">
+					<col width="40">
+						<col width="100">
+							<col width="200">
+			</colgroup>
+			<thead>
+				<tr>
+					<th>
+						<p class="text-left">Account Name</p>
+					</th>
+					<th>
+						<p class="text-left">Paid</p>
+					</th>
+					<th>
+						<p class="text-left">Fees</p>
+					</th>
+					<th>
+						<p class="text-left">Email</p>
+					</th>
+				</tr>
+			</thead>
+		</table>
+	</div>
+	<input class="form-control input-sm" placeholder="Search Accounts" ng-model="searchKey" type="search" autofocus>
+	<div class="table-responsive" style="height:300px; overflow: scroll;">
+		<table class="table table-striped table-hover">
+			<colgroup>
+				<col width="230">
+					<col width="60">
+						<col width="100">
+							<col width="200">
+			</colgroup>
+			<tbody>
+				<tr ng-show="!unpaidonly || (unpaidonly && !account.paid)" class="info" ng-repeat="account in accounts | filter: searchKey">
+					<td>
+						<p class="text-left" tooltip="{{account.tooltip}}">{{account.accountname | limitTo:30}}</p>
+					</td>
+					<td>
+						<input ng-disabled="!(user.getExec () && (user.getExec () == 'treasurer' || user.getExec () == 'webmaster'))"
+							   type="checkbox" ng-change="Toggle({{account}})" ng-model="account.paid">
+					</td>
+					<td><p class="text-left">{{account.fees | currency:$:0}}</p></td>
+					<td><a href="mailto:{{account.emailaddress}}?cc=tsawwassentennisclub@gmail.com&subject=TTC Fees"><p class="text-left">{{account.emailaddress}}</p></a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-warning" type="button" ng-click="Close()">Close</button>
+</div>

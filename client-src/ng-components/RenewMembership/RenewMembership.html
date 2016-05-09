@@ -1,0 +1,74 @@
+<div class="modal-header">
+	<h3 class="modal-title">2016 Membership Renewal Form</h3>
+</div>
+<div class="modal-body">
+	<form name="memberForm" novalidate>
+		<p class="lead">
+			Hi {{member.firstname}},
+			<br>
+			<br> The renewal process has been simplified; you are only required to reaffirm the liability and communications agreements and answer a few fee related questons. Nevertheless, please also ensure that your personal profile is up to date. You can find your profile under "Members Only -> Personal Profile".
+			<br>
+			<br>
+			<a ng-click="openFeeStructure()" style="cursor:pointer">SELECT TO VIEW THE 2016 FEE STRUCTURE</a>
+			<br>
+			<br>Fee Payment instructions can be found on the <strong>About Us</strong> page.
+			<br>
+			<br> Have a great tennis season!
+			<br>
+		</p>
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h4 class="text-center">Approximate Year That You Joined The Club</h4>
+			</div>
+			<div class="panel-body">
+				<ds-joining-year></ds-joining-year>
+			</div>
+		</div>
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h4 class="text-center">Waiver of Liability, Communications Agreement, and Photograph Consent</h4>
+			</div>
+			<div class="panel-body">
+				<div class="container">
+					<div class="row">
+						<ds-liabilityagreed></ds-liabilityagreed>
+					</div>
+					<div class="row">
+						<ds-communicationsagreed></ds-communicationsagreed>
+					</div>
+					<div class="row">
+						<ds-photoagreed></ds-photoagreed>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h4 class="text-center">Fee Related Questions</h4>
+			</div>
+			<div class="panel-body">
+				<ds-student></ds-student>
+				<hr>
+				<div ng-hide="member.student">
+					<ds-familyemailaddress></ds-familyemailaddress>
+				</div>
+			</div>
+		</div>
+</div>
+</form>
+</div>
+<div class="modal-footer">
+
+	<div ng-show="TTCDebug">
+		memberForm.familyemailaddress.$valid: {{memberForm.familyemailaddress.$valid}}
+		<br/> memberForm.familyemailaddress.$error: {{memberForm.familyemailaddress.$error}}
+		<br/> member.communicationsagreed: {{member.communicationsagreed}}
+		<br/> member.liabilityagreed: {{member.liabilityagreed}}
+		<br/> member.photoagreed: {{member.photoagreed}}
+		<br/> member.joiningyear: {{member.joiningyear}}
+		<br/>
+	</div>
+
+	<button class="btn btn-primary" type="button" ng-disabled="!(memberForm.$valid && member.liabilityagreed && member.communicationsagreed)" ng-click="Submit()">Submit</button>
+	<button class="btn btn-warning" type="button" ng-click="Cancel()">Cancel</button>
+</div>

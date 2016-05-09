@@ -1,0 +1,20 @@
+/// <reference path="node.d.ts" />
+declare var mongoose: any;
+declare var Grid: any;
+declare var ObjectID: any;
+declare var fs: any;
+declare var async: any;
+declare var _: any;
+declare var assert: any;
+declare var conn: any;
+declare function initGridFSConnection(): void;
+declare function saveFileToDb(filepath: any, filename: any, category: any, collection_id: any): Promise<{}>;
+declare function retrieveFileFromDb(file: any): Promise<{}>;
+declare function retrieveFileFromDbWithCallback(file: any, callback: any): void;
+declare function removeFileFromDb(file: any): Promise<{}>;
+declare function removeFileFromDbWithCallback(file: any, callback: any): void;
+declare function listDocumentFiles(): Promise<{}>;
+declare function retrieveAllDocuments(): Promise<{}>;
+declare function listNewsItemFiles(newsitemid: any): Promise<{}>;
+declare function retrieveNewsItemFiles(newsitemid: any): Promise<{}>;
+declare function removeNewsItemFiles(newsitemid: any): Promise<{}>;

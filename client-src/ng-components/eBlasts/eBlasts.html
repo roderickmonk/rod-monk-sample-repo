@@ -1,0 +1,13 @@
+<div class="container">
+	<div cg-busy="busyPromise">
+		<h4 id="nightballs">Recent eBlasts</h4>
+	</div>
+	<input class="form-control input-sm" placeholder="Search eBlasts" ng-model="searchKey" type="search" autofocus/>
+	<accordion close-others="false">
+		<accordion-group heading="{{email.date}}, {{email.subject}}" ng-repeat="email in emails | orderBy: '-date'| filter: searchKey">
+			<div ng-bind-html="email.body">
+				{{email.body}}
+			</div>
+		</accordion-group>
+	</accordion>
+</div>

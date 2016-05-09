@@ -1,0 +1,23 @@
+<div class="form-group" ng-class="{ 'has-error': memberForm.dob.$touched && memberForm.dob.$invalid }">
+	<label>Date of Birth</label>
+	<input class="form-control input-sm" type="text" id="dob" name="dob" ng-model="member.dob" value="{{ member.dob | date: 'yyyy-MM-dd' }}" placeholder="YYYY-MM-DD" date-field/>
+	<div class="help-block" ng-messages="memberForm.dob.$error" ng-if="memberForm.dob.$touched">
+		<div ng-messages-include="/ng-templates/form-error-messages.html"></div>
+	</div>
+	<div ng-show="TTCDebug">
+		<hr>
+		memberForm.$invalid: {{memberForm.$invalid}}
+		<hr>
+		memberForm.dob.$touched: {{memberForm.dob.$touched}}
+		<hr>
+		memberForm.dob.$invalid: {{memberForm.dob.$invalid}}
+		<hr>
+		memberForm.dob.$valid: {{memberForm.dob.$valid}}
+		<hr>
+		memberForm.dob.$error.date: {{memberForm.dob.$error.date}}
+		<hr>
+		Raw Date: {{member.dob}}
+		<hr>
+		Formatted Date: {{ member.dob | date:'yyyy-MM-dd'}}
+		</div>
+</div>

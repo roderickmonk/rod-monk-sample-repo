@@ -1,0 +1,31 @@
+<div class="modal-header">
+	<h3 class="modal-title">Login</h3>
+</div>
+<div class="modal-body">
+	<form name="memberForm" novalidate>
+		<div class="form-group">
+			<label>Do you already have a Tsawwassen Tennis Club password?</label>
+			<label class="radio-inline">
+				<input type="radio" ng-model="already_have_a_password" value="No" /> No
+			</label>
+			<label class="radio-inline">
+				<input type="radio" ng-model="already_have_a_password" value="Yes" /> Yes
+			</label>
+		</div>
+		<ds-firstname></ds-firstname>
+		<div ng-show="already_have_a_password=='No'">
+			<ds-familyname></ds-familyname>
+		</div>
+		<ds-emailaddress></ds-emailaddress>
+		<ds-password></ds-password>
+		<div ng-show="already_have_a_password=='No'">
+			<ds-confirmpassword></ds-confirmpassword>
+			<ds-postcode></ds-postcode>
+			<ds-dob></ds-dob>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" type="button" ng-disabled="!memberForm.$valid && !(already_have_a_password=='Yes' && memberForm.emailaddress.$valid && memberForm.password.$valid && memberForm.firstname.$valid)" ng-click="Login()">Login</button>
+	<button class="btn btn-warning" type="button" ng-click="Cancel()">Cancel</button>
+</div>

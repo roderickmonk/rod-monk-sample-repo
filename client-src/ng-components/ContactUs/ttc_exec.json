@@ -1,0 +1,158 @@
+[
+	{
+		"rank": 0,
+		"position": "President",
+		"current": [
+			{
+				"name": "Barry Howard",
+				"emailaddress": "ttc2014.president@gmail.com"
+        }
+      ]
+    },
+	{
+		"rank": 1,
+		"position": "Vice President",
+		"current": [
+			{
+				"name": "vacant",
+				"emailaddress": "ttc2014.vicepresident@gmail.com"
+        }
+      ]
+    },
+	{
+		"rank": 2,
+		"position": "Treasurer",
+		"current": [
+			{
+				"name": "Gary Delf",
+				"emailaddress": "ttc2014.treasurer@gmail.com"
+        }
+      ]
+    },
+	{
+		"rank": 3,
+		"position": "Secretary",
+		"current": [
+			{
+				"name": "Kathleen Semple",
+				"emailaddress": "ttc2014.secretary@gmail.com"
+        }
+      ]
+    },
+	{
+		"rank": 4,
+		"position": "Membership Director",
+		"current": [
+			{
+				"name": "Catherine Delf",
+				"emailaddress": "ttc2014.membership@gmail.com"
+        }
+      ]
+    },
+	{
+		"rank": 5,
+		"position": "Men's League",
+		"current": [
+			{
+				"name": "Wayne Ryan",
+				"emailaddress": "ttc2014.mens@gmail.com"
+        },
+			{
+				"name": "Bob Semple",
+				"emailaddress": "ttc2014.mens@gmail.com"
+        }
+     ]
+    },
+	{
+		"rank": 6,
+		"position": "Women's League",
+		"current": [
+			{
+				"name": "Jane Hindmarch",
+				"emailaddress": "ttc2014.ladies@gmail.com"
+        },
+			{
+				"name": "Jennifer Brennan",
+				"emailaddress": "ttc2014.ladies@gmail.com"
+        }
+      ]
+    },
+	{
+		"rank": 7,
+		"position": "Juniors",
+		"current": [
+			{
+				"name": "Ken Barlow",
+				"emailaddress": "ttc2014.juniors@gmail.com"
+        },
+			{
+				"name": "Michelle Barlow",
+				"emailaddress": "ttc2014.juniors@gmail.com"
+        }
+      ]
+    },
+	{
+		"rank": 8,
+		"position": "Grounds Maintenance",
+		"current": [
+			{
+				"name": "Terry David",
+				"emailaddress": "ttc2014.maintenance@gmail.com"
+        },
+			{
+				"name": "Mike Hawkes",
+				"emailaddress": "ttc2014.maintenance@gmail.com"
+        }
+      ]
+    },
+	{
+		"rank": 9,
+		"position": "Social Director",
+		"current": [
+			{
+				"name": "vacant",
+				"emailaddress": "ttc2014.socialdirector@gmail.com"
+        }
+      ]
+    },
+	{
+		"rank": 10,
+		"position": "WebMaster",
+		"current": [
+			{
+				"name": "Rod Monk",
+				"emailaddress": "webmaster@tsawwassentennis.club"
+        }
+      ]
+    },
+	{
+		"rank": 11,
+		"position": "NewsLetter",
+		"current": [
+			{
+				"name": "Rod Monk",
+				"emailaddress": "newsletter@tsawwassentennis.club"
+        }
+      ]
+    },
+	{
+		"rank": 12,
+		"position": "Clubhouse Maintenance",
+		"current": [
+			{
+				"name": "Trish O'Flaherty",
+				"emailaddress": "ttc2014.clubhouse@gmail.com"
+        }
+      ]
+    },
+	{
+		"rank": 13,
+		"position": "Tournament Director",
+		"current": [
+			{
+				"name": "Mike O'Flaherty",
+				"emailaddress": "ttc2014.tournament@gmail.com"
+        }
+      ]
+    }
+]

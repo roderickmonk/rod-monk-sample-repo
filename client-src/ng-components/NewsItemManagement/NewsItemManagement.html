@@ -1,0 +1,154 @@
+<style>
+	.my-drop-zone {
+		border: dotted 3px lightgray;
+		width: 50%;
+	}
+	
+	.nv-file-over {
+		border: dotted 3px red;
+	}
+	/* Default class applied to drop zones on over */
+	
+	.another-file-over-class {
+		border: dotted 3px green;
+	}
+	
+	html,
+	body {
+		height: 100%;
+	}
+	
+	canvas {
+		background-color: #f3f3f3;
+		-webkit-box-shadow: 3px 3px 3px 0 #e3e3e3;
+		-moz-box-shadow: 3px 3px 3px 0 #e3e3e3;
+		box-shadow: 3px 3px 3px 0 #e3e3e3;
+		border: 1px solid #c3c3c3;
+		height: 100px;
+		margin: 6px 0 0 6px;
+	}
+	
+	textarea {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		width: 100%;
+	}
+</style>
+
+<div class="modal-header">
+	<h3 class="modal-title">Add a News Item</h3>
+</div>
+
+<div class="modal-body">
+	<form name="newsItemForm" novalidate>
+		<div class="panel panel-primary" ng-hide="false">
+			<div class="panel-heading">Headline</div>
+			<textarea ng-model="newsItem.headline" required ng-maxlength="160" ng-trim="true" rows="1"></textarea>	
+			<!--<div class="panel-footer"></div>-->
+		</div>
+		<div class="panel panel-primary" ng-hide="false">
+			<div class="panel-heading">Body</div>
+			<textarea ng-model="newsItem.body" ng-maxlength="4000" required placeholder=" HTML Headers and Lists are permitted" ng-trim="true" rows="10">
+			</textarea>
+			<!--<div class="panel-footer"></div>-->
+		</div>
+	</form>
+	<div class="panel panel-primary" ng-hide="false">
+		<div class="panel-heading">Images Files (either drag and drop or select from your file system)</div>
+		<br/>
+		<!-- Example: nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}" -->
+		<div nv-file-drop="" uploader="uploader">
+
+			<div class="container">
+				<div class="row">
+					<!--<div class="col-md-3">-->
+					<!-- 3. nv-file-over uploader="link" over-class="className" -->
+					<div class="well well-lg my-drop-zone" nv-file-over="" uploader="uploader">
+						<center>Image File Drop Zone</center>
+					</div>
+				</div>
+				<div class="row">
+					<input type="file" nv-file-select="" uploader="uploader" multiple />
+					<br/>
+				</div>
+				<div class="row">
+					<div class="col-md-9" style="margin-bottom: 40px">
+						<p> Number of files yet to be uploaded: {{ uploader.queue.length }}</p>
+
+						<table class="table">
+							<thead>
+								<tr>
+									<th width="50%">Name</th>
+									<th ng-show="uploader.isHTML5">Size</th>
+									<th ng-show="uploader.isHTML5">Progress</th>
+									<th>Status</th>
+									<th>Actions</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="item in uploader.queue">
+									<td>
+										<strong>{{ item.file.name }}</strong>
+										<!-- Image preview -->
+										<!--auto height-->
+										<!--<div ng-thumb="{ file: item.file, width: 100 }"></div>-->
+										<!--auto width-->
+										<!--<div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 100 }"></div>-->
+										<div ng-thumb="{ file: item._file, height: 100 }"></div>
+										<!--fixed width and height -->
+										<!--<div ng-thumb="{ file: item.file, width: 100, height: 100 }"></div>-->
+									</td>
+									<td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+									<td>
+										<div class="progress" style="margin-bottom: 0; wdth: 50%;">
+											<div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+										</div>
+									</td>
+									<td class="text-center">
+										<span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+										<span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+										<span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+									</td>
+									<td nowrap>
+										<button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+											<span class="glyphicon glyphicon-upload"></span> Upload
+										</button>
+										<button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">
+											<span class="glyphicon glyphicon-ban-circle"></span> Cancel
+										</button>
+										<button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+											<span class="glyphicon glyphicon-trash"></span> Remove
+										</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div>
+							<div>
+								Queue progress:
+								<div class="progress" style="">
+									<div class="progress-bar" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
+								</div>
+							</div>
+							<button type="button" class="btn btn-success btn-sm" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">
+								<span class="glyphicon glyphicon-upload"></span> Upload all
+							</button>
+							<button type="button" class="btn btn-warning btn-sm" ng-click="uploader.cancelAll()" ng-disabled="!uploader.isUploading">
+								<span class="glyphicon glyphicon-ban-circle"></span> Cancel all
+							</button>
+							<button type="button" class="btn btn-danger btn-sm" ng-click="uploader.clearQueue()" ng-disabled="!uploader.queue.length">
+								<span class="glyphicon glyphicon-trash"></span> Remove all
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel-footer"></div>
+	</div>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" type="button" ng-disabled="!newsItemForm.$valid" ng-click="Publish()">Publish</button>
+	<button class="btn btn-warning" type="button" ng-click="Close()">Close</button>
+</div>

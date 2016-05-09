@@ -1,0 +1,21 @@
+<div class="container">
+	<accordion close-others="true">
+		<div ng-repeat="NewsItem in NewsItems | orderBy: '-uploadTimestamp'">
+			<accordion-group heading="{{NewsItem.headline}}" ng-click="GetFiles()">
+				<button ng-show="user.getExec () && user.getExec () != ''" type="button" class="btn btn-danger" ng-click="RemoveNewsItem (NewsItem)">
+					<span class="glyphicon glyphicon-trash"></span>
+				</button>
+				<p>{{NewsItem.body}}</p>
+				<div ng-controller="NewsItemFilesController" style="height: 200px">
+					<div class="row">
+						<div ng-repeat="NewsItemFile in NewsItemFiles">
+							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+								<img ng-src="{{NewsItemFile._id}}.{{NewsItemFile.filename.substr(NewsItemFile.filename.lastIndexOf('.')+1)}}" width="250" style="margin:0 auto;">
+							</div>
+						</div>
+					</div>
+				</div>
+			</accordion-group>
+		</div>
+	</accordion>
+</div>

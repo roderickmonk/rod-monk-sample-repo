@@ -1,0 +1,37 @@
+/// <reference path="node.d.ts" />
+/// <reference path="es6-promise.d.ts" />
+declare var http: any;
+declare var util: any;
+declare var url: any;
+declare var path: any;
+declare var bcrypt: any;
+declare var jwt: any;
+declare var formidable: any;
+declare var fs: any;
+declare var readline: any;
+declare var google: any;
+declare var googleAuth: any;
+declare var cache: any;
+declare var ObjectID: any;
+declare var moment: any;
+declare var _: any;
+declare var assert: any;
+declare var ttcDB: any;
+declare var ttcGmail: any;
+declare var Track: any;
+declare var GridFS: any;
+declare var MailChimp: any;
+declare var secretJwtKey: string;
+declare var HTTP_BadRequest: number;
+declare var HTTP_Unauthorized: number;
+declare var HTTP_PaymentRequired: number;
+declare var HTTP_NotFound: number;
+declare var HTTP_Conflict: number;
+declare var HTTP_ServerError: number;
+declare var ALERT_GREETING: string;
+declare function httpError(status: any, err: any, http_response: any): void;
+declare function httpOk(http_response: any): void;
+declare function readRequestJSON(request: any): Promise<{}>;
+declare function readRequest(request: any): Promise<{}>;
+declare var express: any;
+declare var app: any;

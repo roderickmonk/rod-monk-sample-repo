@@ -1,0 +1,29 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"moduleResolution": "classic",
+		"sourceMap": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"removeComments": false,
+		"noImplicitAny": false
+	},
+	"files": [
+		"./server-src/Server.ts",
+		"./server-src/ttcDB.ts",
+		"./server-src/ttcGmail.ts",
+		"./server-src/ttcTrack.ts",
+		"./server-src/ttcMailChimp.ts",
+		"./server-src/ttcGridFS.ts",
+		"./client-src/assets/js/util.ts",
+		"./client-src/ng-directives/compareTo.ts",
+		"./client-src/ng-directives/editor-directives.ts",
+		"./client-src/app.ts",
+		"./client-src/app.route.ts",
+		"./client-src/ng-services/UserService.ts",
+		"./client-src/ng-services/DocumentService.ts",
+		"./client-src/ng-services/MemberService.ts",
+		"./client-src/ng-services/NewsItemService.ts",
+		"./client-src/ng-services/PlacesService.ts"
+	]
+}

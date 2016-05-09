@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="page-header">
+		<h3>Welcome....</h3>
+	</div>
+	<p class="lead">
+		... to the friendliest little tennis club in metro Vancouver, Canada. We are an inclusive club that welcomes tennis players of all levels. For those just starting out, both Junior and Adult training is available through the club. For the more experienced player, we have an engaged and talented membership that will challenge you. The social component of the club is also significant: the Friday Evening Socials have been a mainstay of the club for over 40 years. In addition, a number of inter- and intra-club tournaments are organized throughout the season. Further, a number of TTC teams play league under the aegis of TennisBC. A full statement of the Club's Mission and Values statement can be found here: <a ng-click="openMissionAndValues()" style="cursor:pointer">Mission &#38; Values</a>
+	</p>
+
+	<div class="hidden-xs col-xs-6 col-sm-6 col-md-4">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<p class="text-center">Club Profile: {{MemberCount}} Members</p>
+			</div>
+			<!--		<canvas dir="" id="line" class="chart chart-line" chart-data="MembersByDecade" chart-labels="MembersByDecadeLabels" chart-legend="true" chart-series="MembersByDecadeSeries" chart-click="onClick" style="margin-left:5px; margin-right:5px;">
+		</canvas>
+		<canvas dir="" id="line" class="chart chart-line" chart-data="MembersByBirthMonth" chart-labels="MembersByBirthMonthLabels" chart-legend="true" chart-series="MembersByBirthMonthSeries" chart-click="onClick" style="margin-left:5px; margin-right:5px;">
+		</canvas>
+-->
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-4">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<p class="text-center">How to Find Us</p>
+			</div>
+			<div class="google-maps">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22512.533523978793!2d-123.07620340282921!3d49.019466712154596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5485e5d84d1f9015%3A0xba9dd8ff61b2c07a!2s286+English+Bluff+Rd%2C+Delta%2C+BC+V4M+2N1!5e0!3m2!1sen!2sca!4v1436907042561" frameborder="0"></iframe>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-4">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<p class="text-center">We've Got News!</p>
+			</div>
+			<ol>
+				<div ng-repeat="NewsItem in NewsItems">
+					<li>{{NewsItem.headline}}</li>
+				</div>
+			</ol>
+		</div>
+	</div>
+</div>

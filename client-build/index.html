@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<link rel="icon" type="image/ico" href="/assets/images/Tennis_Ball.ico" />
+
+	<!-- AngularJS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-messages.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-sanitize.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-cookies.js"></script>
+	
+	<!-- Socket.io -->
+	<script src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
+
+	<!-- Latest compiled and minified Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.css">
+
+	<!-- Bundle of Angular JS assets - created by gulp -->
+	<script src="/angular-bundle.js"></script>
+	
+	<script src="/test-export.js"></script>
+	<script src="/test-import.js"></script>
+
+	
+	
+	<!-- Bundle of other JS assets - created by gulp  -->
+	<script src="/asset-bundle.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.js"></script>
+	<link rel="stylesheet" href="/assets/css/custom.css">
+	<link rel="stylesheet" href="/assets/css/awesome-bootstrap-checkbox.css">
+	<link rel="stylesheet" href="/assets/css/angular-busy.css">
+	<link rel="stylesheet" href="/assets/css/angular-chart.min.css">
+	
+	<title>Tsawwassen Tennis Club Website</title>
+	<meta NAME="description" CONTENT="tennis, club, private, tennis training, reasonable fees, league tennis, social tennis, competitive tennis">
+</head>
+
+<!--<body ng-app="ttc" ng-controller='IndexController'>-->
+<body ng-controller='IndexController'>	<div>
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<!-- Home -->
+						<li><a data-toggle="collapse" data-target=".navbar-collapse" href="#Home">Home</a></li>
+						<li><a data-toggle="collapse" data-target=".navbar-collapse" href="#Calendar">Calendar</a></li>
+						<li><a data-toggle="collapse" data-target=".navbar-collapse" href="#News">News</a></li>
+
+						<!-- Coaching -->
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown">Coaching<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li> <a data-toggle="collapse" data-target=".navbar-collapse" href="#JuniorProgram">Junior Program</a> </li>
+								<li> <a data-toggle="collapse" data-target=".navbar-collapse" href="#AdultProgram">Adult Program</a> </li>
+							</ul>
+						</li>
+						<!-- Join the club -->
+
+							<li id="joinMenuItem"> 
+							<a	data-toggle="collapse" data-target=".navbar-collapse" ng-hide="user.isLoggedIn()"
+								ng-click="open('','/ng-components/NewMembership/NewMembership.html','NewMembershipController')" 
+							   	style="cursor:pointer">Join</a></li>		
+			
+						<li><a data-toggle="collapse" data-target=".navbar-collapse" href="#AboutUs">About Us</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown">Contact Us<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a data-toggle="collapse" data-target=".navbar-collapse" href="#ContactUs">Contact Us</a></li>
+								<li><a data-toggle="collapse" data-target=".navbar-collapse" href="#HowToFindUs">How To Find Us</a></li>
+							</ul>
+						</li>
+						<!-- Members Only -->
+						<li id="membersOnlyMenuItem" class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" ng-show="user.isLoggedIn()" style="cursor:pointer">Members Only<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li id="searchMenuItem"> 
+									<a class="btn btn-primary" ng-show="user.isLoggedIn()" data-toggle="collapse" 
+									   data-target=".navbar-collapse" 
+									   href="#SearchMembership">Search Membership
+									</a></li>
+								<!--<li id="eBlastsMenuItem">
+									<a class="btn btn-primary" ng-disabled="!user.isLoggedIn()" data-toggle="collapse" 
+									   data-target=".navbar-collapse" href="#eBlasts" 
+									   ng-show="user.isLoggedIn()">Recent eBlasts</a></li>-->
+								<li id="editPersonalInfoMenuItem"> 
+									<a 	class="btn btn-primary" data-toggle="collapse" data-target=".navbar-collapse" 
+										ng-click="open('','/ng-components/EditPersonalInfo/EditPersonalInfo.html','editPersonalInfoCtrl')" 
+									   	style="cursor:pointer" ng-show="user.isLoggedIn()">Personal Profile
+									</a>
+								</li>
+								<li> <a data-toggle="collapse" data-target=".navbar-collapse" 
+										ng-click="open('sm','/ng-components/ChangePassword/ChangePassword.html','changePasswordController')" 
+										style="cursor:pointer"
+										class="btn btn-primary" ng-show="user.isLoggedIn()">Change Password</a>
+								</li>
+								<li id="returningMemberMenuItem">
+									<a 	data-toggle="collapse" data-target=".navbar-collapse" 
+										ng-click="open('','/ng-components/RenewMembership/RenewMembership.html','renewMembershipCtrl')" 
+										style="cursor:pointer"
+									   class="btn btn-primary" ng-show="user.isLoggedIn()">Renew Membership</a>
+								</li>	
+								<li id="clubDocuments">
+									<a data-toggle="collapse" data-target=".navbar-collapse" 
+									   ng-click="open('lg','/ng-components/DocumentUpload/DocumentUpload.html','DocumentUploadController')" 
+									   style="cursor:pointer"
+									   class="btn btn-primary" ng-show="user.isLoggedIn()">Club Documents</a>
+								</li>
+								<li id="newsItemManagement">
+									<a data-toggle="collapse" data-target=".navbar-collapse" 
+									   ng-click="open('lg','/ng-components/NewsItemManagement/NewsItemManagement.html','NewsItemManagementController')" 
+									   style="cursor:pointer"
+									   class="btn btn-primary" ng-show="user.isLoggedIn() && !!user.getExec ()">Add News Items</a>
+								</li>
+								<li id="feeManagement">
+									<a data-toggle="collapse" data-target=".navbar-collapse" 
+									   ng-click="open('lg','/ng-components/FeeManagement/FeeManagement.html','FeeManagementController')" 
+									   style="cursor:pointer"
+									   class="btn btn-primary" 
+									   ng-show="user.isLoggedIn() && user.getExec () && (	user.getExec ()=='treasurer' || 
+																							user.getExec ()=='membership' || 
+																							user.getExec ()=='president' ||
+																							user.getExec ()=='webmaster')">
+										Fee Management
+									</a>
+								</li>
+								<li> <a data-toggle="collapse" data-target=".navbar-collapse" href="#MemberTable" 
+										class="btn btn-primary" 
+									    ng-show="user.isLoggedIn() && user.getExec () && (	user.getExec ()=='treasurer' || 
+																							user.getExec ()=='membership' || 
+																							user.getExec ()=='president' ||
+																							user.getExec ()=='webmaster')">
+										Fee Configuration
+									</a> 
+								</li>
+							</ul>
+						</li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li id="loginMenuItem"> <a data-toggle="collapse" data-target=".navbar-collapse" 
+												   ng-click="open('sm','/ng-components/Login/Login.html','loginCtrl')" style="cursor:pointer" ng-hide="user.isLoggedIn()">Login</a></li>
+						<li id="logoutMenuItem"><a data-toggle="collapse" data-target=".navbar-collapse" 
+												   ng-click="open('sm','/ng-components/Logout/Logout.html','logoutCtrl')" style="cursor:pointer" ng-show="user.isLoggedIn()">Logout</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="jumbotron">
+				<h1 class="visible-md-block visible-lg-block">Tsawwassen Tennis Club</h1>
+				<h3 class="visible-sm-block">Tsawwassen Tennis Club</h3>
+				<h4 class="visible-xs-block">Tsawwassen Tennis Club</h4>
+				<p class="hidden-xs hidden-sm">The friendliest little tennis club in metro Vancouver</p>
+			</div>
+		</div>
+		<p ng-show="false">TTC Website loading....</p>
+	</div>
+	<div ng-view>
+	</div>
+	<hr>
+	<div class="container">
+		<div class="row">
+			<!--<div class="col-xs-12 col-sm-12 col-md-4">
+				<span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=16jGOKyynqxzNL3074GLkGlFB25tGpwXraG82Xaj8eifTmxusxTSmlsN3Dsh"></script></span>
+			</div>-->
+			<div class="col-xs-12 col-sm-12 col-md-4">
+				<a href="http://www.digerati-strategies.com" title="Digerati Strategies" target="_blank" 
+				   style="font-family: Arial, Helvetica, sans-serif; font-size: 10px; color: #6E6A68; text-decoration: none ;"><p class="small text-center" style="line-height:60%;">www.Digerati-Strategies.com</p>
+					<p class="small text-center" ng-show="!(device.device=='unknown')" style="line-height:60%;">{{device.os}}-{{device.device}}-{{device.browser}}</p>
+					<p class="small text-center" ng-show="device.device=='unknown'" style="line-height:60%;">{{device.os}}-{{device.browser}}</p>
+				</a>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-4">
+				<a href="http://www.hitwebcounter.com" target="_blank">
+					<img src="http://hitwebcounter.com/counter/counter.php?page=6214011&style=0038&nbdigits=5&type=ip&initCount=0" 
+						 title="Home Remedies For Wrinkles" Alt="Home Remedies For Wrinkles" border="0" style="display: block; margin-left: auto; margin-right: auto">
+				</a>
+				<a href="http://www.hitwebcounter.com" title="Count Stats Visits" target="_blank" 
+				   style="font-family: Arial, Helvetica, sans-serif; font-size: 10px; color: #6E6A68; text-decoration: none ;">
+					<p class="small text-center">Unique Visitors</p>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://www.tsawwassentennis.club",
+      "logo": "https://www.tsawwassentennis.club/client-build/assets/images/hanging_tennis_ball.jpeg"
+    }
+    </script>
+ 	<script>
+		angular.element(document).ready(function() {
+			console.log ('Starting Angular');
+			angular.bootstrap(document, ['ttc']);
+		});
+  	</script>
+</body>
+</html>

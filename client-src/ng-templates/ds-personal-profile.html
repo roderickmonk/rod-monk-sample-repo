@@ -1,0 +1,144 @@
+<form name="memberForm" novalidate>
+	<div class="panel-group">
+		<div class="panel panel-primary">
+			<div class="panel-heading"></div>
+			<div class="panel-body">
+				<ds-firstname></ds-firstname>
+				<ds-familyname></ds-familyname>
+				<ds-emailaddress></ds-emailaddress>
+				<ds-confirm-emailaddress></ds-confirm-emailaddress>
+				<div ng-show="new_applicant">
+					<ds-password></ds-password>
+					<ds-confirmpassword></ds-confirmpassword>
+				</div>
+				<ds-student></ds-student>
+				<hr>
+				<div ng-hide="member.student">
+					<ds-familyemailaddress></ds-familyemailaddress>
+				</div>
+				<ds-address></ds-address>
+				<ds-place></ds-place>
+				<ds-postcode></ds-postcode>
+				<ds-primaryphone></ds-primaryphone>
+				<ds-alternativephone></ds-alternativephone>
+				<ds-dob></ds-dob>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h4 class="text-center">Waiver of Liability, Communications Agreement, and Photography Consent</h4>
+		</div>
+		<div class="panel-body">
+			<div class="container">
+				<div class="row">
+					<ds-liabilityagreed></ds-liabilityagreed>
+				</div>
+				<div class="row">
+					<ds-communicationsagreed></ds-communicationsagreed>
+				</div>
+				<div class="row">
+					<ds-photoagreed></ds-photoagreed>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h4 class="text-center">General Volunteer Opportunities</h4>
+			<p class="text-justify">Volunteers make the club - please contribute where you can. More than one of the following can be selected.</p>
+		</div>
+		<div class="panel-body">
+			<div class="container">
+				<div class="col-xs-12">
+					<ds-volunteer-maintenance></ds-volunteer-maintenance>
+				</div>
+				<div class="col-xs-12">
+					<ds-volunteer-bookkeeping></ds-volunteer-bookkeeping>
+				</div>
+				<div class="col-xs-12">
+					<ds-volunteer-gardening></ds-volunteer-gardening>
+				</div>
+				<div class="col-xs-12">
+					<ds-volunteer-archivist></ds-volunteer-archivist>
+				</div>
+				<div class="col-xs-12">
+					<ds-volunteer-organizeclubsocial></ds-volunteer-organizeclubsocial>
+				</div>
+				<div class="col-xs-12">
+					<ds-volunteer-supportsocialevents></ds-volunteer-supportsocialevents>
+				</div>
+				<div class="col-xs-12">
+					<ds-volunteer-phonecommittee></ds-volunteer-phonecommittee>
+				</div>
+				<div class="col-xs-12">
+					<ds-volunteer-webprogramming></ds-volunteer-webprogramming>
+				</div>
+				<div class="col-xs-12">
+					<ds-volunteer-teamcaptain></ds-volunteer-teamcaptain>
+				</div>
+				<div class="col-xs-12">
+					<ds-volunteer-membershipdrives></ds-volunteer-membershipdrives>
+				</div>
+				<div class="col-xs-12">
+					<ds-volunteer-mediacoordinator></ds-volunteer-mediacoordinator>
+				</div>
+				<div class="col-xs-12">
+					<ds-volunteer-supportplayerimprovementjunior></ds-volunteer-supportplayerimprovementjunior>
+				</div>
+				<div class="col-xs-12">
+					<ds-volunteer-supportplayerimprovementadult></ds-volunteer-supportplayerimprovementadult>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h4 class="text-center">Volunteer for an Executive Position</h4>
+			<p class="text-justify">The executive positions require a more or less ongoing commitment throughout the course of the tennis season and into the off-season as well. For this reason, the holder's of these positions receive a discount on the annual club fees. Please indicate below if you wish to be considered for any of the following posiitons. Normally anyone taking on an exec role will be supported through a hand-over period by the last person holding the position.</p>
+		</div>
+		<div class="panel-body">
+			<div class="container">
+				<div class="col-xs-12">
+					<ds-exec-president></ds-exec-president>
+				</div>
+				<div class="col-xs-12">
+					<ds-exec-vicepresident></ds-exec-vicepresident>
+				</div>
+				<div class="col-xs-12">
+					<ds-exec-secretary></ds-exec-secretary>
+				</div>
+				<div class="col-xs-12">
+					<ds-exec-treasurer></ds-exec-treasurer>
+				</div>
+				<div class="col-xs-12">
+					<ds-exec-maintenance></ds-exec-maintenance>
+				</div>
+				<div class="col-xs-12">
+					<ds-exec-membershipdirector></ds-exec-membershipdirector>
+				</div>
+				<div class="col-xs-12">
+					<ds-exec-socialdirector></ds-exec-socialdirector>
+				</div>
+				<div class="col-xs-12">
+					<ds-exec-mensleague></ds-exec-mensleague>
+				</div>
+				<div class="col-xs-12">
+					<ds-exec-womensleague></ds-exec-womensleague>
+				</div>
+				<div class="col-xs-12">
+					<ds-exec-juniorprogramcoordinator></ds-exec-juniorprogramcoordinator>
+				</div>
+				<div class="col-xs-12">
+					<ds-exec-webmaster></ds-exec-webmaster>
+				</div>
+				<div class="col-xs-12">
+					<ds-exec-newsletter></ds-exec-newsletter>
+				</div>
+				<div class="col-xs-12">
+					<ds-exec-tournamentdirector></ds-exec-tournamentdirector>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

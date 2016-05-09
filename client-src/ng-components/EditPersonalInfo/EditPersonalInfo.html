@@ -1,0 +1,36 @@
+<div class="modal-header">
+	<h3 class="modal-title">Personal Profile</h3>
+</div>
+<div class="modal-body">
+	<ds-personal-profile></ds-personal-profile>
+</div>
+<div class="modal-footer">
+
+	<div ng-show="TTCDebug">
+	memberForm.$pristine: {{memberForm.$pristine}}<br/>
+	memberForm.firstname.$valid: {{memberForm.firstname.$valid}}<br/>
+	memberForm.familyname.$valid: {{memberForm.familyname.$valid}}<br/>
+	memberForm.emailaddress.$valid: {{memberForm.emailaddress.$valid}}<br/>
+	memberForm.address.$valid: {{memberForm.address.$valid}}<br/>
+	memberForm.place.$valid: {{memberForm.place.$valid}}<br/>
+	memberForm.postcode.$valid: {{memberForm.postcode.$valid}}<br/>
+	memberForm.primaryphone.$valid: {{memberForm.primaryphone.$valid}}<br/>
+	memberForm.dob.$valid: {{memberForm.dob.$valid}}<br/>
+	member.communicationsagreed: {{member.communicationsagreed}}<br/>
+	</div>
+
+	<button class="btn btn-primary" type="button" 
+			ng-disabled="memberForm.$pristine ||
+						 !(	memberForm.firstname.$valid &&
+						 	memberForm.familyname.$valid && 
+						 	memberForm.emailaddress.$valid &&
+						 	memberForm.address.$valid &&
+						 	memberForm.place.$valid &&
+						 	memberForm.postcode.$valid &&
+						 	memberForm.primaryphone.$valid &&
+						 	memberForm.dob.$valid &&
+						 	member.communicationsagreed &&
+						 	member.liabilityagreed)"		 	
+			ng-click="Save()">Save</button>
+	<button class="btn btn-warning" type="button" ng-click="Cancel()">Cancel</button>
+</div>

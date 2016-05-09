@@ -1,0 +1,65 @@
+<div class="modal-header">
+	<h3 class="modal-title">2016 New Member Application Form</h3>
+</div>
+<div class="modal-body">
+	<p class="lead">
+		Welcome New Member!
+		<br>
+		<br>Below you are asked to provide your name and contact details. Note that in order to play league, date of birth must be correct. You will also be asked to provide a password that you can use later to Login to this site. Once your application has been approved and fees have been received, your new account will be activated and thereafter you will have full access to this site.
+		<br>
+		<br>
+		<a ng-click="openFeeStructure()" style="cursor:pointer">SELECT TO VIEW THE 2016 FEE STRUCTURE</a>
+		<br>
+		<br>Fee Payment instructions can be found on the <strong>About Us</strong> page.
+		<br>
+	</p>
+	<div class="panel-group">
+		<div class="panel panel-danger">
+			<div class="panel-heading"><strong>THIS FORM IS NOT FOR MEMBERSHIP RENEWAL</strong></div>
+			<div class="panel-body">
+				If you are an existing club member, please do not use this form. Instead you must Login and go to Members Only => Renew Membership.
+			</div>
+		</div>
+	</div>
+	<ds-personal-profile></ds-personal-profile>
+</div>
+
+<div ng-show="TTCDebug">
+	memberForm.$pristine: {{memberForm.$pristine}}
+	<br/> memberForm.firstname.$valid: {{memberForm.firstname.$valid}}
+	<br/> memberForm.familyname.$valid: {{memberForm.familyname.$valid}}
+	<br/> memberForm.emailaddress.$valid: {{memberForm.emailaddress.$valid}}
+	<br/> memberForm.address.$valid: {{memberForm.address.$valid}}
+	<br/> memberForm.place.$valid: {{memberForm.place.$valid}}
+	<br/> memberForm.postcode.$valid: {{memberForm.postcode.$valid}}
+	<br/> memberForm.primaryphone.$valid: {{memberForm.primaryphone.$valid}}
+	<br/> memberForm.dob.$valid: {{memberForm.dob.$valid}}
+	<br/> member.communicationsagreed: {{member.communicationsagreed}}
+	<br/> member.dob.length: {{member.dob.length}}
+	<br/>
+</div>
+
+<div class="modal-footer">
+	<!--<button class="btn btn-primary" type="button" ng-disabled="!memberForm.$valid || !member.communicationsagreed || !member.liabilityagreed" ng-click="Submit()">Submit</button>-->
+
+	<button class="btn btn-primary" type="button" ng-disabled="
+									memberForm.$pristine || 
+								 	!memberForm.$valid || 
+								 	!memberForm.dob.$touched || 
+								 	!memberForm.dob.$valid ||
+						 			!memberForm.firstname.$valid ||
+						 			!memberForm.familyname.$valid ||
+						 			!memberForm.emailaddress.$valid ||
+						 			!memberForm.address.$valid ||
+						 			!memberForm.place.$valid ||
+						 			!memberForm.postcode.$valid ||
+						 			!memberForm.primaryphone.$valid ||
+						 			!member.communicationsagreed ||
+						 			!member.liabilityagreed" ng-click="Submit()">
+		Submit
+	</button>
+
+	<button class="btn btn-warning" type="button" ng-click="Cancel()">
+		Cancel
+	</button>
+</div>
