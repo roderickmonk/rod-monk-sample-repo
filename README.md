@@ -3,7 +3,7 @@ The site is running at https://www.tsawwassentennis.club for the Tsawwassen Tenn
 <br>
 The goals of the site are the following:
 <ol>
-<li>To provide all of the content that the existing site does ('Home page', 'How to Find Us', 'Calendar', 'News', 'About Us', 'Contact Us', etc.</li>
+<li>To provide all of the content that the previous site did ('Home page', 'How to Find Us', 'Calendar', 'News', 'About Us', 'Contact Us', etc.</li>
 <li>To be responsive.</li>
 <li>Allow members to 'Login'.</li>
 <li>Allow members to search the membership contacts details (once logged in).</li>
